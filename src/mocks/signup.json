@@ -3,7 +3,8 @@
     "user": {
         "id": 2,
         "name": "Jane Doe",
-        "email": "jane@example.com"
+        "email": "jane@example.com",
+        "password": "jane123"
     },
     "expiresAt": 1710000000000
 }
