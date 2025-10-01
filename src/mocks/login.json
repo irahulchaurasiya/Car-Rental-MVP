@@ -1,9 +1,202 @@
-{
-    "loggedIn": true,
-    "user": {
-        "id": 1,
-        "name": "John Doe",
-        "email": "john@example.com"
+[
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 1,
+            "name": "Alice Smith",
+            "email": "alice1@example.com",
+            "password": "alice123"
+        },
+        "expiresAt": 1710000001000
     },
-    "expiresAt": 1710000000000
-}
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 2,
+            "name": "Bob Johnson",
+            "email": "bob2@example.com",
+            "password": "bob123"
+        },
+        "expiresAt": 1710000002000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 3,
+            "name": "Charlie Brown",
+            "email": "charlie3@example.com",
+            "password": "charlie123"
+        },
+        "expiresAt": 1710000003000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 4,
+            "name": "Diana Prince",
+            "email": "diana4@example.com",
+            "password": "diana123"
+        },
+        "expiresAt": 1710000004000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 5,
+            "name": "Ethan Hunt",
+            "email": "ethan5@example.com",
+            "password": "ethan123"
+        },
+        "expiresAt": 1710000005000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 6,
+            "name": "Fiona Green",
+            "email": "fiona6@example.com",
+            "password": "fiona123"
+        },
+        "expiresAt": 1710000006000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 7,
+            "name": "George White",
+            "email": "george7@example.com",
+            "password": "george123"
+        },
+        "expiresAt": 1710000007000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 8,
+            "name": "Hannah Black",
+            "email": "hannah8@example.com",
+            "password": "hannah123"
+        },
+        "expiresAt": 1710000008000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 9,
+            "name": "Ian Gray",
+            "email": "ian9@example.com",
+            "password": "ian123"
+        },
+        "expiresAt": 1710000009000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 10,
+            "name": "Julia Adams",
+            "email": "julia10@example.com",
+            "password": "julia123"
+        },
+        "expiresAt": 1710000010000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 11,
+            "name": "Kevin Scott",
+            "email": "kevin11@example.com",
+            "password": "kevin123"
+        },
+        "expiresAt": 1710000011000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 12,
+            "name": "Laura King",
+            "email": "laura12@example.com",
+            "password": "laura123"
+        },
+        "expiresAt": 1710000012000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 13,
+            "name": "Michael Lee",
+            "email": "michael13@example.com",
+            "password": "michael123"
+        },
+        "expiresAt": 1710000013000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 14,
+            "name": "Nina Walker",
+            "email": "nina14@example.com",
+            "password": "nina123"
+        },
+        "expiresAt": 1710000014000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 15,
+            "name": "Oscar Young",
+            "email": "oscar15@example.com",
+            "password": "oscar123"
+        },
+        "expiresAt": 1710000015000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 16,
+            "name": "Paula Turner",
+            "email": "paula16@example.com",
+            "password": "paula123"
+        },
+        "expiresAt": 1710000016000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 17,
+            "name": "Quinn Hill",
+            "email": "quinn17@example.com",
+            "password": "quinn123"
+        },
+        "expiresAt": 1710000017000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 18,
+            "name": "Rachel Green",
+            "email": "rachel18@example.com",
+            "password": "rachel123"
+        },
+        "expiresAt": 1710000018000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 19,
+            "name": "Sam Wilson",
+            "email": "sam19@example.com",
+            "password": "sam123"
+        },
+        "expiresAt": 1710000019000
+    },
+    {
+        "loggedIn": true,
+        "user": {
+            "id": 20,
+            "name": "Tina Brooks",
+            "email": "tina20@example.com",
+            "password": "tina123"
+        },
+        "expiresAt": 1710000020000
+    }
+]
