@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 
-import LoginScreen from '../screens/loginScreen';
-import SignupScreen from '../screens/signupScreen';
-import BottomTabs from './bottomTabs';
 import { logout } from '../store/slices/authSlice';
 import { storage } from '../services/storage';
-import CarDetailsScreen from '../screens/carDetailScreen';
 
-const Stack = createNativeStackNavigator();
+import AuthNavigator from './authNavigator';
+import AppNavigator from './appNavigator';
 
 const RootNavigator = () => {
   const dispatch = useDispatch();
@@ -36,19 +32,7 @@ const RootNavigator = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {!isSessionValid ? (
-          <>
-            <Stack.Screen name="Login" component={LoginScreen} />
-            <Stack.Screen name="Signup" component={SignupScreen} />
-          </>
-        ) : (
-          <>
-            <Stack.Screen name="Main" component={BottomTabs} />
-            <Stack.Screen name="CarDetails" component={CarDetailsScreen} />
-          </>
-        )}
-      </Stack.Navigator>
+        {isSessionValid ? <AppNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
 };
