@@ -9,6 +9,7 @@ import SignupScreen from '../screens/signupScreen';
 import BottomTabs from './bottomTabs';
 import { logout } from '../store/slices/authSlice';
 import { storage } from '../services/storage';
+import CarDetailsScreen from '../screens/carDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,11 +26,11 @@ const RootNavigator = () => {
         dispatch(logout());
         storage.delete('auth');
       }, remainingTime);
-  
+
       return () => clearTimeout(timer);
     }
   }, [loggedIn, expiresAt, dispatch]);
-  
+
 
   console.log('Auth state:', loggedIn, isSessionValid, expiresAt, Date.now());
 
@@ -42,7 +43,10 @@ const RootNavigator = () => {
             <Stack.Screen name="Signup" component={SignupScreen} />
           </>
         ) : (
-          <Stack.Screen name="Main" component={BottomTabs} />
+          <>
+            <Stack.Screen name="Main" component={BottomTabs} />
+            <Stack.Screen name="CarDetails" component={CarDetailsScreen} />
+          </>
         )}
       </Stack.Navigator>
     </NavigationContainer>

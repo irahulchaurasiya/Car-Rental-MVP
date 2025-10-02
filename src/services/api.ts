@@ -16,5 +16,9 @@ export const api = {
   signup: async () => {
     await delay(3000);
     return require("../mocks/signup.json");
-  } 
+  },
+  getCars: async () => {
+    await delay(2000);
+    return require("../mocks/cars.json");
+  }
 };
