@@ -7,8 +7,13 @@ import { storage } from '../services/storage'
 import * as Yup from 'yup'
 import { api } from '../services/api'
 import { login } from '../store/slices/authSlice'
+import { LoginValues } from '../types/global'
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { AuthStackParamList } from '../types/navigation'
 
-const LoginScreen = ({ navigation }: any) => {
+type Props = NativeStackScreenProps<AuthStackParamList, 'Login'>;
+
+const LoginScreen = ({navigation}: Props) => {
 
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
@@ -18,7 +23,7 @@ const LoginScreen = ({ navigation }: any) => {
         password: Yup.string().required('Required'),
     })
 
-    const handleLogin = async (values: any) => {
+    const handleLogin = async (values: LoginValues) => {
         try {
             setLoading(true);
             console.log("login data:", loginData);
@@ -48,7 +53,7 @@ const LoginScreen = ({ navigation }: any) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Login</Text>
-            <Formik
+            <Formik<LoginValues>
                 initialValues={{ email: '', password: '' }}
                 validationSchema={validationSchema}
                 onSubmit={handleLogin}

@@ -5,6 +5,7 @@ import { RootState } from '../store';
 
 import { logout } from '../store/slices/authSlice';
 import { storage } from '../services/storage';
+
 import AuthNavigator from './authNavigator';
 import AppNavigator from './appNavigator';
 
@@ -21,11 +22,11 @@ const RootNavigator = () => {
         dispatch(logout());
         storage.delete('auth');
       }, remainingTime);
-  
+
       return () => clearTimeout(timer);
     }
   }, [loggedIn, expiresAt, dispatch]);
-  
+
 
   console.log('Auth state:', loggedIn, isSessionValid, expiresAt, Date.now());
 

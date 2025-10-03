@@ -7,8 +7,13 @@ import { useDispatch } from 'react-redux';
 import signupData from '../mocks/signup.json'
 import { api } from '../services/api';
 import { login } from '../store/slices/authSlice';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { AuthStackParamList } from '../types/navigation';
+import { SignupValues } from '../types/global';
 
-const SignupScreen = ({ navigation }: any) => {
+type Props = NativeStackScreenProps<AuthStackParamList, 'Signup'>;
+
+const SignupScreen = ({ navigation }: Props) => {
 
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
@@ -19,7 +24,7 @@ const SignupScreen = ({ navigation }: any) => {
         password: Yup.string().required('Required'),
     })
 
-    const handleSignup = async (values: any) => {
+    const handleSignup = async (values: SignupValues) => {
         try {
             setLoading(true);
             console.log('signup data:', signupData);
@@ -46,7 +51,7 @@ const SignupScreen = ({ navigation }: any) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>SignUp</Text>
-            <Formik
+            <Formik<SignupValues>
                 initialValues={{ name: '', email: '', password: '' }}
                 validationSchema={validationSchema}
                 onSubmit={(values) => handleSignup(values)}>
