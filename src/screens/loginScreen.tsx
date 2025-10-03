@@ -9,9 +9,9 @@ import { api } from '../services/api'
 import { login } from '../store/slices/authSlice'
 import { LoginValues } from '../types/global'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { RootStackParamList } from '../types/navigation'
+import { AuthStackParamList } from '../types/navigation'
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
+type Props = NativeStackScreenProps<AuthStackParamList, 'Login'>;
 
 const LoginScreen = ({navigation}: Props) => {
 

@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { api } from '../services/api'
@@ -23,7 +23,7 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>All Cars</Text>
+      <Text style={styles.title}>Home</Text>
 
       <FlatList
         data={cars}
@@ -33,13 +33,14 @@ const HomeScreen = () => {
             style={styles.card}
             onPress={() => navigation.navigate('CarDetails', { car: item })}
           >
-            <Image
-              source={{ uri: item.images[0] }}
-              style={styles.carImage}
-              resizeMode="cover"
-            />
-            <Text style={styles.carText}>{item.make} {item.model}</Text>
-            <Text style={styles.priceText}>${item.pricePerDay}/day</Text>
+            <View>
+              <Image source={{ uri: item.images[0] }} style={styles.carImage} resizeMode="cover" />
+              <View style={styles.overlay}>
+                <Text style={styles.carText}>{item.make} {item.model}</Text>
+                <Text style={styles.priceText}>${item.pricePerDay}/day</Text>
+              </View>
+            </View>
+
           </TouchableOpacity>
         )}
       />
@@ -50,10 +51,48 @@ const HomeScreen = () => {
 export default HomeScreen
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, justifyContent: 'flex-start'},
-  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' },
-  card: { marginBottom: 20, alignItems: 'center', backgroundColor: '#f9f9f9', padding: 10, borderRadius: 10 },
-  carImage: { width: '100%', height: 200, borderRadius: 10 },
-  carText: { fontSize: 18, fontWeight: '600', marginTop: 10 },
-  priceText: { fontSize: 16, color: 'gray' }
+  container: { 
+    flex: 1, 
+    padding: 20, 
+    justifyContent: 'flex-start', 
+    backgroundColor: '#f9fafb' 
+  },
+  title: { 
+    fontSize: 24, 
+    fontWeight: 'bold', 
+    marginBottom: 20, 
+    textAlign: 'center' 
+  },
+  card: {
+    marginBottom: 20,
+    borderRadius: 12,
+    overflow: 'hidden',
+    backgroundColor: '#fff',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+  },
+  carImage: {
+    width: '100%',
+    height: 300,
+  },
+  overlay: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    padding: 8,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+  },
+  carText: { 
+    color: '#fff', 
+    fontSize: 18, 
+    fontWeight: 'bold' 
+  },
+  priceText: { 
+    color: '#ffd700', 
+    fontWeight: '600', 
+    fontSize: 16 
+  },
 })

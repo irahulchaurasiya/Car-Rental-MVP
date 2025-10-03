@@ -8,10 +8,10 @@ import signupData from '../mocks/signup.json'
 import { api } from '../services/api';
 import { login } from '../store/slices/authSlice';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../types/navigation';
+import { AuthStackParamList } from '../types/navigation';
 import { SignupValues } from '../types/global';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Signup'>;
+type Props = NativeStackScreenProps<AuthStackParamList, 'Signup'>;
 
 const SignupScreen = ({ navigation }: Props) => {
 
