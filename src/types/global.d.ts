@@ -8,3 +8,14 @@ export type Cars = {
   seats: number;
   transmission: string;
 }
+
+export type LoginValues = {
+  email: string;
+  password: string;
+}
+
+export type SignupValues = {
+  name: string;
+  email: string;
+  password: string;
+}
